@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Meme() {
+export default function Meme(props) {
     const [meme, setMeme] = React.useState({
         topText: "",
         bottomText: "",
@@ -46,11 +46,11 @@ export default function Meme() {
     
     return (
         <main>
-            <div className="form">
+            <div className={props.darkMode ? "form--dark": "form"}>
                 <input 
                     type="text"
                     placeholder="Top text"
-                    className="form--input"
+                    className={props.darkMode ? "form--input--dark": "form--input"}
                     name="topText"
                     value={meme.topText}
                     onChange={handleChange}
@@ -58,13 +58,13 @@ export default function Meme() {
                 <input 
                     type="text"
                     placeholder="Bottom text"
-                    className="form--input"
+                    className={props.darkMode ? "form--input--dark": "form--input"}
                     name="bottomText"
                     value={meme.bottomText}
                     onChange={handleChange}
                 />
                 <button 
-                    className="form--button"
+                    className={props.darkMode ? "form--button--dark": "form--button"}
                     onClick={getMemeImage}
                 >
                     Get a new meme image 🖼

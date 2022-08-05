@@ -9,10 +9,19 @@ import Meme from "./components/Meme"
  * - Don't worry about adding any functionality yet
  */
 export default function App() {
+    const [darkMode, setDarkMode] = React.useState(true)
+
+    function toggleDarkMode() {
+        setDarkMode(prevMode => !prevMode)
+    }
+
     return (
         <div>
-            <Header />
-            <Meme />
+            <Header 
+                darkMode={darkMode}
+                toggleDarkMode={toggleDarkMode}
+            />
+            <Meme darkMode={darkMode} />
         </div>
     )
 }
