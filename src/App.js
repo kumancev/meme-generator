@@ -9,7 +9,7 @@ import Meme from "./components/Meme"
  * - Don't worry about adding any functionality yet
  */
 export default function App() {
-    const [darkMode, setDarkMode] = React.useState(true)
+    const [darkMode, setDarkMode] = React.useState(false)
 
     function toggleDarkMode() {
         setDarkMode(prevMode => !prevMode)
